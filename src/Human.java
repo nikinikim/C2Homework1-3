@@ -5,10 +5,26 @@ public class Human {
     String jobTitle;
 
     Human(String name, String town, String jobTitle, int yearOfBirth) {
-        this.name = name;
-        this.town = town;
-        this.yearOfBirth = yearOfBirth;
-        this.jobTitle = jobTitle;
+        if ("".equals(name) || name == null) {
+            this.name = "Информация не указана";
+        }else {
+            this.name = name;
+        }
+        if ("".equals(town) || town == null) {
+            this.town = "Информация не указана";
+        }else {
+            this.town = town;
+        }
+        if (yearOfBirth >= 0) {
+            this.yearOfBirth = yearOfBirth;
+        }else{
+            this.yearOfBirth = Math.abs(yearOfBirth);
+        }
+        if ("".equals(jobTitle) || jobTitle == null) {
+            this.jobTitle = "Информация не указана";
+        }else {
+            this.jobTitle = jobTitle;
+        }
     }
 
     @Override
